@@ -16,7 +16,7 @@ int main(int argc, const char *argv[])
         return 1;
     }
 
-    Aether::File file(argv[1], new Aether::Logger("file", "AetherSource"));
+    Aether::File file(argv[1]);
     try
     {
         file.open(Aether::File::OpenMode::READ);
@@ -34,14 +34,14 @@ int main(int argc, const char *argv[])
 
         for (std::string line : lines)
         {
-            mainLogger.log(Aether::LogLevel::TRACE, line);
+            mainLogger.log(Aether::LogLevel::DEBUG, line);
         }
 
         file.close();
     }
     catch (const Aether::FileException &e)
     {
-        mainLogger.log(Aether::LogLevel::TRACE, "FileException(" + std::string(e.what()) + ")");
+        mainLogger.log(Aether::LogLevel::FATAL, "FileException(" + std::string(e.what()) + ")");
         return 1;
     }
     return 0;

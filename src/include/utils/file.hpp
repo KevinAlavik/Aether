@@ -9,6 +9,7 @@
 
 namespace Aether
 {
+    
     class FileException : public std::runtime_error
     {
     public:
