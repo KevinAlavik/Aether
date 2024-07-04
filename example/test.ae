@@ -1,2 +1,1 @@
-u8 test = 1;
-test++;
+u8 test = 123;

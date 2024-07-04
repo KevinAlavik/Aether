@@ -2,9 +2,13 @@
 #include <string>
 #include <vector>
 
+#include <aether.hpp>
+
 #include <utils/logger.hpp>
 #include <utils/file.hpp>
 #include <utils/string.hpp>
+
+#include <core/tokenizing.hpp>
 
 Aether::Logger mainLogger("main", "AetherMain");
 
@@ -31,10 +35,11 @@ int main(int argc, const char *argv[])
         // TODO: Code generation bruh
 
         std::vector<std::string> lines = Aether::Strings::split(content, "\n");
+        Aether::Tokenizer tokenizer;
 
         for (std::string line : lines)
         {
-            mainLogger.log(Aether::LogLevel::DEBUG, line);
+            tokenizer.tokenize(line);
         }
 
         file.close();
