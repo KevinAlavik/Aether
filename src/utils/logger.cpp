@@ -42,6 +42,6 @@ void Logger::log(LogLevel level, const std::string &message)
         break;
     }
 
-    std::cout << "[" << ss.str() << "] [" << m_main << "/" << levelToString(level) << "] [" << m_name << "]: "
+    std::cout << "[" << ss.str() << "] [" << m_scope << "/" << levelToString(level) << "] [" << m_name << "]: "
               << color << message << "\033[0m" << std::endl;
 }

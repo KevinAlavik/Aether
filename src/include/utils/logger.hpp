@@ -18,12 +18,12 @@ namespace Aether
     class Logger
     {
     public:
-        Logger(const std::string &m, const std::string &n) : m_name(n), m_main(m) {}
+        Logger(const std::string &scope, const std::string &name) : m_name(name), m_scope(scope) {}
         void log(LogLevel level, const std::string &message);
 
     private:
         const std::string m_name;
-        const std::string m_main;
+        const std::string m_scope;
 
         const std::string levelToString(LogLevel level)
         {
