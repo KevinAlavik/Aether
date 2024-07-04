@@ -1,7 +1,11 @@
 #include <iostream>
 
+#include <utils/logger.hpp>
+
+Aether::Logger mainLogger("main", "Aether");
+
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    mainLogger.log(Aether::LogLevel::OK, "Hello world!");
     return 0;
 }
