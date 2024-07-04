@@ -1,2 +1,3 @@
 # Aether
-A simple programming language
+A simple programming language that transpiles to C99
+
